@@ -2,8 +2,12 @@
 #the aim of this program is to find the highest palindrome you can get by multiplying 2 3 digit numbers#
  
 highest = 0
-for x in range(98000, 100000):
-    for y in range(98000, 100000):
+itr = 0
+isPal = False
+
+for x in range(999, 0, -1):
+    for y in range(999, 0, -1):
+        itr += 1
         total = x * y
         nList = list(str(total))
         
@@ -26,4 +30,11 @@ for x in range(98000, 100000):
             if total > highest:
                 highest = total
                 
-print (highest)
+        if isPal:
+            break
+    if isPal:
+        break
+                
+        
+                
+print ("result:", highest, "took", itr, "iterations to find")
