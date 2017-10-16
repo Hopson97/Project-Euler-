@@ -16,7 +16,7 @@ def testForPalindrone(number):
     if digitBools.count(first) == listLength and first: #if all elements are the true
         end(number)
     
-if __name__ == "main":
+if __name__ == "__main__":
     for i in range(999, 900, -1):
         for j in range(999, 900, -1):
             testForPalindrone(i * j)
