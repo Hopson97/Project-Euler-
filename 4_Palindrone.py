@@ -10,15 +10,13 @@ def testForPalindrone(number):
     digitBools  = [False] * listLength
     
     for i in range(listLength):
-        if (digitList[i] == digitList[listLength - 1 - i]):
+        if (digitList[i] == digitList[::-1][i]):
             digitBools[i] = True 
     first = digitBools[0]        
     if digitBools.count(first) == listLength and first: #if all elements are the true
         end(number)
     
-def main():
+if __name__ == "main":
     for i in range(999, 900, -1):
         for j in range(999, 900, -1):
             testForPalindrone(i * j)
-
-main()
