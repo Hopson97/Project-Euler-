@@ -1,29 +1,24 @@
 #Palindrome Finder#
 #the aim of this program is to find the highest palindrome you can get by multiplying 2 3 digit numbers#
- 
-highest = 0
-for x in range(900, 999):
-    for y in range(900, 999):
-        total = x * y
-        nList = list(str(total))
-        
-        length  = len(nList)
-        pals     = [False] * length #one boolean per digit
-        for i in range (length):
-            if (nList[i] == nList[length - 1 - i]): #if the number either side is the same, set the bool to true
-                pals[i] = True
-        
-        #test if the whole list of bools is true
-        isPal = True
-        for bool in pals:
-            if not bool:
-                isPal = False
-                break
-            else:
-                isPal = True
-                
-        if isPal:
-            if total > highest:
-                highest = total
-                
-print (highest)
+def end(number):
+    print("Highest Palindrone:", number)
+    exit()
+
+def testForPalindrone(number):
+    digitList   = str(number)
+    listLength  = len(digitList)
+    digitBools  = [False] * listLength
+    
+    for i in range(listLength):
+        if (digitList[i] == digitList[listLength - 1 - i]):
+            digitBools[i] = True 
+    first = digitBools[0]        
+    if digitBools.count(first) == listLength and first: #if all elements are the true
+        end(number)
+    
+def main():
+    for i in range(999, 900, -1):
+        for j in range(999, 900, -1):
+            testForPalindrone(i * j)
+
+main()
