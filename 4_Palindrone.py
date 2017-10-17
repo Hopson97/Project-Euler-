@@ -13,7 +13,7 @@ def testForPalindrone(number):
         if (digitList[i] == digitList[::-1][i]):
             digitBools[i] = True 
     first = digitBools[0]        
-    if digitBools.count(first) == listLength and first: #if all elements are the true
+    if all(digitBools):
         end(number)
     
 if __name__ == "__main__":
