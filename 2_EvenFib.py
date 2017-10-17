@@ -15,7 +15,7 @@ if __name__ == "__main__":
     a = 1 
     b = 2
     while a < 4000000 and b < 4000000:
-        if isEven(a)
+        if isEven(a):
             sequence.append(a)
         if isEven(b):
             sequence.append(b)
